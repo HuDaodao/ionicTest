@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+          <ion-icon name='menu'></ion-icon>
+        </button>
+    <ion-title>
+      我的关注
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding menuToggle calss="cards-bg">
+  <ion-card>
+    <img src="assets/img/house.jpg">
+    <ion-card-content>
+      <ion-card-title>
+        风景
+      </ion-card-title>
+      <p>
+        这是张三的作品…
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="lightblue" icon-start>
+                <ion-icon name='star'></ion-icon>
+                  收藏
+                </button>
+      </ion-col>
+      <ion-col text-center>
+        <button (tap)="tapEvent($event)" ion-button clear small color="lightblue" icon-start>
+              <ion-icon name="star"></ion-icon>
+              {{tap}}次点赞
+              </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="lightblue" icon-start>
+                <ion-icon name='share-alt'></ion-icon>
+                  分享
+                </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/mr_tang.png">
+    <ion-card-content>
+      <ion-card-title>
+        中西合璧
+      </ion-card-title>
+      <p>
+        这是李四
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="lightblue" icon-start>
+            <ion-icon name='star'></ion-icon>
+                收藏
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="lightblue" icon-start>
+           <ion-icon name="star"></ion-icon>
+                点赞
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="lightblue" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+                  分享
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>我的关注</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- <ion-item *ngFor="let item of character[items]">
+        <ion-avatar>
+          <img src="{{character.image}}">
+        </ion-avatar>
+        <h2>{{character.name}}</h2>
+        <p>{{character.discrip}}</p>
+      </ion-item> -->
+
+      <ion-item (click)="openModal({charNum:0})">
+        <ion-avatar item-start>
+          <img src="assets/img/avatar-samwise.jpg">
+        </ion-avatar>
+        <h2>小恶魔</h2>
+        <p>kills his father</p>
+      </ion-item>
+      <ion-item (click)="openModal({charNum:1})">
+        <ion-avatar item-start>
+          <img src="assets/img/nana_head.jpg">
+        </ion-avatar>
+        <h2>荆棘女王</h2>
+        <p>有个了不起的孙女</p>
+      </ion-item>
+      <ion-item (click)="openModal({charNum:2})">
+        <ion-avatar item-start>
+          <img src="assets/img/samsa_head.jpg">
+        </ion-avatar>
+        <h2>三傻</h2>
+        <p>正式逆袭</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            登录
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <ion-list>
+            <ion-item [ngClass]="{'has-error':(!name.valid && name.touched)}">
+                <ion-label floating>用户名</ion-label>
+                <ion-input type="text" [formControl]="name" id="name"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="name.invalid && (name.dirty || name.touched)" id="errorMsg">
+                <div *ngIf="name.errors.required">
+                    姓名必填
+                </div>
+                <div *ngIf="name.errors.maxlength">
+                    姓名不能大于5位
+                </div>
+            </ion-label>
+
+            <ion-item [ngClass]="{'has-error':(!passWord.valid && passWord.touched)}">
+                <ion-label floating>密码</ion-label>
+                <ion-input type="passWord" [formControl]="passWord"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" id="errorMsg">
+                <div *ngIf="passWord.errors.required">
+                    密码是必填项
+                </div>
+                <div *ngIf="passWord.errors.minlength">
+                    密码不能小于3位
+                </div>
+                <div *ngIf="passWord.errors.maxlength">
+                    密码不能大于15位
+                </div>
+            </ion-label>
+        </ion-list>
+
+        <div padding>
+            <button ion-button type="submit" [disabled]="!form.valid" color="primary" block>登录</button>
+        </div>
+    </form>
+
+</ion-content>

@@ -1,0 +1,15 @@
+page-input{
+    form{
+        ion-item{
+            &.has-error{
+                color:red;
+            }
+        }
+
+        ion-label{
+            &#errorMsg{
+                color:red;
+            }
+        }
+    }
+}
