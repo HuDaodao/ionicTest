@@ -10,10 +10,9 @@
           <ion-list-header>
             朋友
           </ion-list-header>
-      
 
-          <!-- <ion-item-sliding *ngFor="let item of list['member']" >
-            <ion-item>
+          <ion-item-sliding *ngFor="let member of members ">
+            <ion-item *ngIf="member.type=='friend'">
               <ion-avatar item-start>
                 <img src="{{member.image}}">
               </ion-avatar>
@@ -34,9 +33,8 @@
                     更多
               </button>
             </ion-item-options>
-          </ion-item-sliding> -->
-      
-      
+          </ion-item-sliding>
+
           <ion-item-sliding>
             <ion-item>
               <ion-avatar item-start>
@@ -60,103 +58,6 @@
               </button>
             </ion-item-options>
           </ion-item-sliding>
-      
-          <ion-item-sliding>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/img/cry2.jpg">
-              </ion-avatar>
-              <h2>Ray</h2>
-              <p>Ugly little spud, isn't he?</p>
-            </ion-item>
-            <ion-item-options>
-              <button ion-button color="light" icon-start>
-                <ion-icon name="ios-more"></ion-icon>
-                More
-              </button>
-              <button ion-button color="primary" icon-start>
-                <ion-icon name="text"></ion-icon>
-                Text
-              </button>
-              <button ion-button color="secondary" icon-start>
-                <ion-icon name="call"></ion-icon>
-                Call
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-      
-          <ion-item-sliding>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/img/cry3.jpg">
-              </ion-avatar>
-              <h2>Winston</h2>
-              <p>That's a big Twinkie.</p>
-            </ion-item>
-            <ion-item-options>
-              <button ion-button color="light" icon-start>
-                <ion-icon name="ios-more"></ion-icon>
-                More
-              </button>
-              <button ion-button color="primary" icon-start>
-                <ion-icon name="text"></ion-icon>
-                Text
-              </button>
-              <button ion-button color="secondary" icon-start>
-                <ion-icon name="call"></ion-icon>
-                Call
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-      
-          <ion-item-sliding>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/img/cry4.jpg">
-              </ion-avatar>
-              <h2>Tully</h2>
-              <p>Okay, who brought the dog?</p>
-            </ion-item>
-            <ion-item-options>
-              <button ion-button color="light" icon-start>
-                <ion-icon name="ios-more"></ion-icon>
-                More
-              </button>
-              <button ion-button color="primary" icon-start>
-                <ion-icon name="text"></ion-icon>
-                Text
-              </button>
-              <button ion-button color="secondary" icon-start>
-                <ion-icon name="call"></ion-icon>
-                Call
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-      
-          <ion-item-sliding>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/img/mask.jpg">
-              </ion-avatar>
-              <h2>Dana</h2>
-              <p>I am The Gatekeeper!</p>
-            </ion-item>
-            <ion-item-options>
-              <button ion-button color="light" icon-start>
-                <ion-icon name="ios-more"></ion-icon>
-                More
-              </button>
-              <button ion-button color="primary" icon-start>
-                <ion-icon name="text"></ion-icon>
-                Text
-              </button>
-              <button ion-button color="secondary"icon-start >
-                <ion-icon name="call"></ion-icon>
-                Call
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-      
         </ion-list>
       
         <ion-list>
